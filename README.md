@@ -3,10 +3,10 @@ Without pretention, just for fun and learning.
 
 # To do
 
-:radio_button: create and animate a real sprite
+:radio_button: create and animate a real sprite <br>
 :radio_button: pimper les Makefile
 
-# How launch my 'game' (not so much a game for now :) )
+## How launch my 'game' (not so much a game for now :) )
 
 <b>To lauch:</b>
 
@@ -28,7 +28,7 @@ make clean
 make fclean
 ````
 
-# Ressources
+## Ressources
 
 Tool to convert images to tilesets/sprites: <a href="https://github.com/flozz/img2gb">img2gb</a> by <a href="https://github.com/flozz">@flozz</a>
 <a href="https://blog.flozz.fr/category/gameboy.html">Tuto to gbdk-n</a> in French by <a href="https://github.com/flozz">@flozz</a>
