@@ -1,6 +1,6 @@
 PROG = game
 
-GBDK_N = gbdk-n
+GBDK_N = ../lib/gbdk-n
 CC = $(GBDK_N)/bin/gbdk-n-compile.sh
 LD = $(GBDK_N)/bin/gbdk-n-link.sh
 MR = $(GBDK_N)/bin/gbdk-n-make-rom.sh
@@ -38,6 +38,7 @@ clean:
 	rm -rf *.lst
 	rm -rf *.sym
 	rm -rf *.asm
+	rm -rf *.o
 	rm -rf $(PROG).gb
 	rm -rf $(PROG).ihx
 	rm -rf $(PROG).map
