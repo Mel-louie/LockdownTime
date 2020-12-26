@@ -6,7 +6,7 @@ Without pretention, just for fun and learning.
 :radio_button: create and animate a real sprite <br>
 :ballot_box_with_check: pimper les Makefile
 
-## How launch my 'game' (not so much a game for now :) )
+### How launch my 'game' (not so much a game for now :) )
 
 <b>To lauch:</b>
 
@@ -29,7 +29,7 @@ make clean
 make fclean
 ````
 
-## Ressources
+### Ressources
 
 <h6>Tutorials</h6>
 <a href="https://blog.flozz.fr/category/gameboy.html">Tuto to gbdk-n</a> in French by <a href="https://github.com/flozz">@flozz</a><br>
