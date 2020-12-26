@@ -37,7 +37,7 @@ make fclean
 
 <h6>Tools and ressources</h6>
 Tool to convert images to tilesets/sprites: <a href="https://github.com/flozz/img2gb">img2gb</a> by <a href="https://github.com/flozz">@flozz</a><br>
-Pokemon tileset: <a href="https://www.spriters-resource.com/">The Spriters ressources</a>, <a href="https://tcrf.net/The_Cutting_Room_Floor">The Cutting Room Floor</a><br>
+Pokemon tileset: <a href="https://www.spriters-resource.com/">The Spriters ressources</a>, <a href="https://tcrf.net/The_Cutting_Room_Floor">The Cutting Room Floor</a><br><br>
 To create pixel art (maps, backgrounds, sprites, etc):
 <ul>
 	<li><a href="https://www.gimp.org/downloads/">GIMP</a>;</li>
