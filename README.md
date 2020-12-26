@@ -31,6 +31,10 @@ make fclean
 
 ## Ressources
 
-Tool to convert images to tilesets/sprites: <a href="https://github.com/flozz/img2gb">img2gb</a> by <a href="https://github.com/flozz">@flozz</a><br>
+<h6>Tutorials</h6>
 <a href="https://blog.flozz.fr/category/gameboy.html">Tuto to gbdk-n</a> in French by <a href="https://github.com/flozz">@flozz</a><br>
+<a href="https://www.youtube.com/watch?v=HIsWR_jLdwo&list=PLeEj4c2zF7PaFv5MPYhNAkBGrkx4iPGJo">Playlist of tutorials</a> in English to learn how to use GBDK and create a GameBoy game.<br>
+
+<h6>Tools and ressources</h6>
+Tool to convert images to tilesets/sprites: <a href="https://github.com/flozz/img2gb">img2gb</a> by <a href="https://github.com/flozz">@flozz</a><br>
 Pokemon tileset: <a href="https://www.spriters-resource.com/">The Spriters ressources</a>, <a href="https://tcrf.net/The_Cutting_Room_Floor">The Cutting Room Floor</a><br>
