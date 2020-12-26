@@ -4,7 +4,7 @@ Without pretention, just for fun and learning.
 # To do
 
 :radio_button: create and animate a real sprite <br>
-:radio_button: pimper les Makefile
+:ballot_box_with_check: pimper les Makefile
 
 ## How launch my 'game' (not so much a game for now :) )
 

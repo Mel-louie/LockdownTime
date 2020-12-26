@@ -1,3 +1,8 @@
+/*################*/
+/*#    My 1st    #*/
+/*#    GB GAME   #*/
+/*################*/
+
 #include "../lib/gbdk-n/include/gb/gb.h"
 #include "../includes/tilemap_bckgrnd.h"
 #include "../includes/tileset_bckgrnd.h"
@@ -85,5 +90,5 @@ int		main(void) {
 	while (1) {
 		moves();
 	}
-	return (0);
+//	return (0);
 }
