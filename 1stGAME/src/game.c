@@ -26,8 +26,6 @@ UBYTE	can_player_move(UINT8 new_posx, UINT8 new_posy) {
 
 int		main(void) {
 
-	init_map();
-
 	init_player();
 
 	DISPLAY_ON;

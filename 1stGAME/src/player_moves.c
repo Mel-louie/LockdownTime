@@ -102,6 +102,8 @@ void	moves(void) {
 
 
 void	init_player(void) {
+
+	init_map();
 	// init the player
 	player_pos[0] = 84;
 	player_pos[1] = 78;
