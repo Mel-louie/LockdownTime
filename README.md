@@ -5,6 +5,7 @@ Without pretention, just for fun and learning.
 
 :radio_button: manage collisions with background<br>
 :radio_button: add a title screen with a press start, splash screen with fadding palette, something pretty, etc<br>
+:radio_button: adda gif in this readme of the game/titlescreen<br>
 :radio_button: adding some text and intercations with items<br>
 :radio_button: adding sound<br>
 :ballot_box_with_check: tidy up the files + comments<br>
