@@ -4,6 +4,9 @@ Without pretention, just for fun and learning.
 # To do
 
 :radio_button: manage collisions with background<br>
+:radio_button: add a title screen with a press start, splash screen with fadding palette, something pretty, etc<br>
+:radio_button: adding some text and intercations with items<br>
+:radio_button: adding sound<br>
 :ballot_box_with_check: tidy up the files + comments<br>
 :ballot_box_with_check: create and animate a real sprite <br>
 :ballot_box_with_check: pimper les Makefile
@@ -35,6 +38,7 @@ make fclean
 
 <h6>Tutorials</h6>
 <a href="https://blog.flozz.fr/category/gameboy.html">Tuto to gbdk-n</a> in French by <a href="https://github.com/flozz">@flozz</a><br>
+<a href="https://www.youtube.com/playlist?list=PLz2msaUAjsFdrg0jOQGWFzjiKZnB1o9od">Tuto to gbdk-n</a> videos in French by <a href="https://github.com/flozz">@flozz</a> and Studio Renegade<br>
 <a href="https://www.youtube.com/watch?v=HIsWR_jLdwo&list=PLeEj4c2zF7PaFv5MPYhNAkBGrkx4iPGJo">Playlist of tutorials</a> in English to learn how to use GBDK and create a GameBoy game.<br>
 
 <h6>Tools and ressources</h6>
