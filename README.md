@@ -4,13 +4,17 @@ Without pretention, just for fun and learning.
 # To do
 
 :radio_button: manage collisions with background<br>
+:radio_button: add a cat<br>
+:radio_button: add a roomate<br>
 :radio_button: add a title screen with a press start, splash screen with fadding palette, something pretty, etc<br>
-:radio_button: adda gif in this readme of the game/titlescreen<br>
+:radio_button: add a gif in this readme of the game/titlescreen<br>
 :radio_button: adding some text and intercations with items<br>
 :radio_button: adding sound<br>
 :ballot_box_with_check: tidy up the files + comments<br>
 :ballot_box_with_check: create and animate a real sprite <br>
-:ballot_box_with_check: pimper les Makefile
+:ballot_box_with_check: pimper les Makefile<br>
+
+:radio_button: exterior with a scroll (! the player moves with the screen limits)<br>
 
 ### How launch my 'game' (not so much a game for now :) )
 

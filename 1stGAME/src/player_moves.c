@@ -27,7 +27,7 @@ UINT8 player_pos[2];
 UINT8 player_direction;
 UINT8 player_animation_frame;
 UINT8 is_player_walking;
-UINT8 frame_skip = 8;
+UINT8 frame_skip = 4;
 
 void	perform_delay(UINT8 num_loops) {
 	UINT8 i = 0;
@@ -75,27 +75,31 @@ void	move_player(INT8 dx, INT8 dy) {
 				break;
 		}
 		player_animation_frame = (player_animation_frame + 1) % 4;
-		frame_skip = 8;
+		frame_skip = 4;
 	}
 }
 
 void	moves(void) {
-	// update the animation every 8 frames, otherwise the animation will be to quick 
+	// update the animation every 4 frames, otherwise the animation will be to quick 
 	if (joypad() & J_UP) {
 		player_direction = PLAYER_DIRECTION_UP;
-		move_player(0, -1);
+		if (player_pos[1] >= 16)
+			move_player(0, -1);
 	}
 	else if (joypad() & J_DOWN) {					// if chose if instead of else if: moving in diagonal
 		player_direction = PLAYER_DIRECTION_DOWN;
-		move_player(0, +1);
+		if (player_pos[1] <= 142)
+			move_player(0, +1);
 	}
 	else if (joypad() & J_LEFT) {
 		player_direction = PLAYER_DIRECTION_LEFT;
-		move_player(-1, 0);
+		if (player_pos[0] >= 8)
+			move_player(-1, 0);
 	}
 	else if (joypad() & J_RIGHT) {
 		player_direction = PLAYER_DIRECTION_RIGHT;
-		move_player(+1, 0);
+		if (player_pos[0] <= 152)
+			move_player(+1, 0);
 	}
 	perform_delay(1);
 }
