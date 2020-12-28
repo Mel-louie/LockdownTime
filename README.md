@@ -51,6 +51,7 @@ To create pixel art (maps, backgrounds, sprites, etc):
 	<li><a href="https://lospec.com/">lospec.com</a>: tutorials, ressources and online pixel art editor;</li>
 </ul>
 
-test
+
+
 <!-- https://opengameart.org/content/top-down-pokemon-esque-sprites -->
 <!-- https://opengameart.org/content/parallax-city-night-4-colors -->
