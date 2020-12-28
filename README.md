@@ -3,7 +3,9 @@ Without pretention, just for fun and learning.
 
 # To do
 
-:radio_button: create and animate a real sprite <br>
+:radio_button: manage collisions with background<br>
+:ballot_box_with_check: tidy up the files + comments<br>
+:ballot_box_with_check: create and animate a real sprite <br>
 :ballot_box_with_check: pimper les Makefile
 
 ### How launch my 'game' (not so much a game for now :) )
@@ -43,3 +45,6 @@ To create pixel art (maps, backgrounds, sprites, etc):
 	<li><a href="https://www.gimp.org/downloads/">GIMP</a>;</li>
 	<li><a href="https://lospec.com/">lospec.com</a>: tutorials, ressources and online pixel art editor;</li>
 </ul>
+
+<!-- https://opengameart.org/content/top-down-pokemon-esque-sprites -->
+<!-- https://opengameart.org/content/parallax-city-night-4-colors -->
