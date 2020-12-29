@@ -1,8 +1,8 @@
 Work in progress of my 1st Gameboy game.
 Without pretention, just for fun and learning.
 
-<img src="./game.gif"
-     alt="an animated a gif of a work in prgress game">
+<div align="center"><img src="./game.gif"
+     alt="an animated a gif of a work in prgress game"></div>
 
 # To do
 
