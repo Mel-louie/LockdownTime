@@ -1,10 +1,15 @@
 Work in progress of my 1st Gameboy game.
 Without pretention, just for fun and learning.
 
+<img src="./game.gif"
+     alt="an animated a gif of a work in prgress game">
+
 # To do
 
-:radio_button: manage collisions with background<br>
+:ballot_box_with_check: manage collisions with background<br>
 :radio_button: add a cat<br>
+:radio_button: change player colors and hair + correction of the animation, test with the little gb<br>
+:radio_button: refacto and comments<br>
 :radio_button: add a roomate<br>
 :radio_button: add a title screen with a press start, splash screen with fadding palette, something pretty, etc<br>
 :radio_button: add a gif in this readme of the game/titlescreen<br>
@@ -55,6 +60,9 @@ To create pixel art (maps, backgrounds, sprites, etc):
 	<li><a href="https://lospec.com/">lospec.com</a>: tutorials, ressources and online pixel art editor;</li>
 </ul>
 
+<h6>Emulator</h6>
+An <a href="http://gb.alexaladren.net/">emulator</a> in js, online
+An other <a href="https://toadking.com/retroarch/gambatte.html">emulator</a> in js, online
 
 
 <!-- https://opengameart.org/content/top-down-pokemon-esque-sprites -->

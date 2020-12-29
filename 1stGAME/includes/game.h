@@ -4,8 +4,8 @@
 /*################*/
 
 #include "../lib/gbdk-n/include/gb/gb.h"
-#include "./tilemap_bckgrnd.h"
-#include "./tileset_bckgrnd.h"
+#include "./tilemap_home.h"
+#include "./tileset_home.h"
 #include "./player1.h"
 
 /*
