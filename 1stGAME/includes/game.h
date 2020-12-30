@@ -6,7 +6,7 @@
 #include "../lib/gbdk-n/include/gb/gb.h"
 #include "./tilemap_home.h"
 #include "./tileset_home.h"
-#include "./player1.h"
+#include "./tiles_player.h"
 
 /*
 ** FUNCTIONS
@@ -14,9 +14,9 @@
 
 void	perform_delay(UINT8 num_loops);
 
-/* MAPS */
+/* Maps */
 void	init_map(void);
 
-/* PLAYER */
+/* Player */
 void	init_player(void);
-void	moves(void);
+void	game(void);
