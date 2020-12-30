@@ -9,7 +9,6 @@ Without pretention, just for fun and learning.
 :ballot_box_with_check: manage collisions with background<br>
 :radio_button: add a cat<br>
 :radio_button: change player colors and hair + correction of the animation, test with the little gb<br>
-:radio_button: refacto and comments<br>
 :radio_button: add a roomate<br>
 :radio_button: add a title screen with a press start, splash screen with fadding palette, something pretty, etc<br>
 :radio_button: add a gif in this readme of the game/titlescreen<br>
