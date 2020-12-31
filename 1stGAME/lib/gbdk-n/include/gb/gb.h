@@ -46,6 +46,7 @@
 /** If this is set, sprite colours come from OBJ1PAL.  Else
     they come from OBJ0PAL.
 */
+
 #define S_PALETTE    0x10U
 /** If set the sprite will be flipped horizontally.
  */

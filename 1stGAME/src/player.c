@@ -124,13 +124,13 @@ void	game(void) {
 		player_direction = PLAYER_DIRECTION_RIGHT;
 			move_player(+1, 0);
 	}
-	perform_delay(1);
 }
 
 void	init_player(void) {
 
 	init_map();
 	// init the player
+	OBP0_REG = OBP1_REG = 0xe2; // choosen colors
 	player_pos_world[0] = 10;
 	player_pos_world[1] = 9;
 	player_pos_screen[0] = player_pos_world[0] * 8;

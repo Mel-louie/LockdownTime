@@ -4,9 +4,13 @@
 /*################*/
 
 #include "../lib/gbdk-n/include/gb/gb.h"
-#include "./tilemap_home.h"
-#include "./tileset_home.h"
-#include "./tiles_player.h"
+#include "tilemap_splashscreen.h"
+#include "tileset_splashscreen.h"
+#include "tilemap_home.h"
+#include "tileset_home.h"
+#include "tiles_player.h"
+#include "tileset_screen.h"
+#include "tilemap_screen.h"
 
 /*
 ** FUNCTIONS
