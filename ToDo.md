@@ -30,4 +30,17 @@ To have the right shades of color for a sprite (black, gray, white, and light gr
     --name PLAYER_SPRITES1 \<br>
     ./player1.png<br>
 	- when init sprite, add this change fot default palettes: 'OBP0_REG = OBP1_REG = 0xe2';<br>
-	- can test other combinason<br>
+	- can test other combinason<br><br>
+
+memo palette:
+put the hexa values avoid to have 'warning 158: overflow in implicit constant conversion' which is not great
+
+b 11
+g 10
+l 01
+w 00
+
+PALETTE(WHITE, LIGHTGR, GREY, BLACK) = 11100100 = 0xe4
+PALETTE(LIGHTGR, GREY, BLACK, BLACK) = 11111001 = 0xf9
+PALETTE(GREY, BLACK, BLACK, BLACK) = 11111110 = 0xfe
+PALETTE(BLACK, BLACK, BLACK, BLACK) = 11111111 = 0xff
