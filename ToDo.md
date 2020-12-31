@@ -18,8 +18,7 @@
 :ballot_box_with_check: create and animate a real sprite <br>
 :ballot_box_with_check: pimper les Makefile<br><br><br>
 
-
-:green_book:<h3>random notes</h3>
+<h3>:green_book:random notes</h3>
 To have the right shades of color for a sprite (black, gray, white, and light gray transparent):<br>
 	- draw with WHITE for transparence, and LIGHT GREY for white;
 	- convert to gb with img2gb ans this commande:
