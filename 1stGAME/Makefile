@@ -29,14 +29,18 @@ _END		= "\033[0m"
 ################
 
 all:
-	@echo $(_BLUE)"Building - "$(_YELLOW)$(PROG)$(_END)
-	@$(MAKE) -C $(SRC_DIR)
-	@echo $(_BLUE)"Copy "$(_YELLOW)$(GAME)$(_BLUE)" in the current directory..."$(_END)
-	@cp $(SRC_DIR)$(GAME) .
-	@echo $(_GREEN)"Done!"
+	@echo $(_BLUE)"Building ... "$(_YELLOW)
+#	@$(MAKE) -C $(SRC_DIR) # to compile with gbdk-n; or gbdk2020:
+	@./lib/gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -o game.gb src/*.c
+#	@echo $(_BLUE)"Copy "$(_YELLOW)$(GAME)$(_BLUE)" in the current directory..."$(_END)
+#	@cp $(SRC_DIR)$(GAME) .
+	@echo $(_GREEN)"Done!"$(_END)
 
 clean:
-	@make clean -C $(SRC_DIR)
+	@echo $(_RED)"Cleaning in progress..."$(_END)
+	@rm -rf game.map game.noi
+	@echo $(_GREEN)"Cleaning done!"$(_END)
+#	@make clean -C $(SRC_DIR)
 
 fclean:	clean
 	@rm -rf game.gb

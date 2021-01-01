@@ -58,13 +58,15 @@ void	main(void) {
 
 	splash_screen();
 //
+
 perform_delay(10);
 BGP_REG = 0xfe;
 perform_delay(15);
 BGP_REG = 0xf9;
 perform_delay(15);
-BGP_REG = 0xe4; // del when home_screen() ok
-	//home_screen();
+BGP_REG = 0xe4;
+// del when home_screen() ok
+//	home_screen();
 
 	init_player();
 

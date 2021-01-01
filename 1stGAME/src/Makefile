@@ -1,3 +1,5 @@
+# ! USE: Makefile exclusively to build with gbdk-n
+
 PROG = game
 
 GBDK_N = ../lib/gbdk-n
