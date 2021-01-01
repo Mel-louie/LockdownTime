@@ -17,7 +17,7 @@ make
 ````
 And you can launch the .gb with your favorite Gameboy emulator!
 
-<b>To delete the binaries, .asm, etc:</b>
+<b>To delete the binaries, utiles files, etc:</b>
 
 ````
 make clean
