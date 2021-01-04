@@ -68,7 +68,7 @@ void	move_player(INT8 dx, INT8 dy) {
 		player_pos_screen[1] += dy;
 		move_sprite(PLAYER_SPRITE_L_ID, player_pos_screen[0], player_pos_screen[1]);
 		move_sprite(PLAYER_SPRITE_R_ID, player_pos_screen[0] + 8, player_pos_screen[1]);
-		perform_delay(1);
+		perform_delay_player(1);
 
 	// manage animation
 		frame_skip -= 1;
@@ -128,6 +128,7 @@ void	game(void) {
 
 void	init_player(void) {
 
+	HIDE_BKG;
 	init_map();
 	// init the player
 	OBP0_REG = OBP1_REG = 0xe2; // choosen colors

@@ -4,7 +4,7 @@
 #define _TILESET_SCREEN_H
 
 extern const UINT8 TILESETSC[];
-#define TILESETSC_TILE_COUNT 147
+#define TILESETSC_TILE_COUNT 146
 
 
 #endif

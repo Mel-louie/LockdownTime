@@ -12,12 +12,15 @@
 #include "tiles_player.h"
 #include "tileset_screen.h"
 #include "tilemap_screen.h"
+#include "text.h"
+#include "tileset_font.h"
 
 /*
 ** FUNCTIONS
 */
 
-void	perform_delay(UINT8 num_loops);
+UINT8	perform_delay(UINT8 time);
+void	perform_delay_player(UINT8 time);
 
 /* Maps */
 void	init_map(void);
