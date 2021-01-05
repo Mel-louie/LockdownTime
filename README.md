@@ -49,6 +49,7 @@ To create pixel art (maps, backgrounds, sprites, etc):
 <h6>Gameboy emulator</h6>
 An <a href="http://gb.alexaladren.net/">emulator</a> in js, online<br>
 An other <a href="https://toadking.com/retroarch/gambatte.html">emulator</a> in js, online<br>
+An other <a href="http://taisel.github.io/GameBoy-Online/">emulator</a> online, with the possibility to have original green GB screen<br>
 
 <h6>Fonts</h6>
 <a href="https://www.dafont.com/early-gameboy.font">Early GameBoy</a><br>

@@ -21,6 +21,11 @@
 
 UINT8	perform_delay(UINT8 time);
 void	perform_delay_player(UINT8 time);
+void	clear_title_screen(void);
+
+/* Screens */
+void	splash_screen(void);
+void	title_screen(void);
 
 /* Maps */
 void	init_map(void);
