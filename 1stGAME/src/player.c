@@ -139,9 +139,11 @@ void	init_player(void) {
 	player_direction = PLAYER_DIRECTION_DOWN;
 	player_animation_frame = 0;
 
-	// load tiles sprites in vidoe memory
+	// load tiles sprites in video memory
 	set_sprite_data(0, PLAYER_SPRITES1_TILE_COUNT, PLAYER_SPRITES1);
 	set_sprite_tile(0, 0);
+/*	set_sprite_data(0, CAT_TILE_COUNT, CAT); // the player is a cat
+	set_sprite_tile(0, 0);*/
 	// init the 2nd part of the player, 'cause the sprite is a metaSprite (16x16)
     set_sprite_tile(1, 2);
 	SPRITES_8x16;

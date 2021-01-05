@@ -14,6 +14,7 @@
 #include "tilemap_screen.h"
 #include "text.h"
 #include "tileset_font.h"
+#include "tiles_cat.h"
 
 /*
 ** FUNCTIONS
