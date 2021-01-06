@@ -15,7 +15,7 @@ void	text_load_font(UINT8 code) {
 }
 
 void	text_putchar_win(UINT8 x, UINT8 y, unsigned char c) {
-	UINT16	tile = TEXT_CHAR_X;
+	UINT16	tile = TEXT_CHAR_QS_MARK;
 
 	if (c >= 'A' && c <= 'Z') {
 		tile = TEXT_CHAR_A + c - 'A';
@@ -51,9 +51,6 @@ void	text_putchar_win(UINT8 x, UINT8 y, unsigned char c) {
 				break ;
 			case '!':
 				tile = TEXT_CHAR_EX_MARK;
-				break ;
-			case '?':
-				tile = TEXT_CHAR_QS_MARK;
 				break ;
 			case '(':
 				tile = TEXT_CHAR_BRK_L;

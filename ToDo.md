@@ -2,6 +2,7 @@
 
 :radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority<br><br><br>
 
+:exclamation::exclamation::radio_button: interact without walk...<br>
 :exclamation::radio_button: create sprites for cat and roomate<br>
 :radio_button: add a cat<br>
 :radio_button: add a roomate<br>
@@ -48,3 +49,7 @@ PALETTE(WHITE, LIGHTGR, GREY, BLACK) = 11100100 = 0xe4
 PALETTE(LIGHTGR, GREY, BLACK, BLACK) = 11111001 = 0xf9
 PALETTE(GREY, BLACK, BLACK, BLACK) = 11111110 = 0xfe
 PALETTE(BLACK, BLACK, BLACK, BLACK) = 11111111 = 0xff
+
+memo text:
+
+19 char/line

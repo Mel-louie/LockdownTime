@@ -32,5 +32,9 @@ void	title_screen(void);
 void	init_map(void);
 
 /* Player */
-void	init_player(void);
+void	init_game(void);
 void	game(void);
+
+/* Messages boxes */
+void	show_message_box(void);
+void	show_message(unsigned char *str);

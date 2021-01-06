@@ -10,9 +10,9 @@ void	main(void) {
 	// splash_screen();
 	// HIDE_BKG;
 	// title_screen();
-	// clear_title_screen();
+	 //clear_title_screen();
 
-	init_player();
+	init_game();
 	while (1) {
 		game();
 	}
