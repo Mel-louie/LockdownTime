@@ -29,10 +29,31 @@ UINT8 player_direction;
 UINT8 player_animation_frame;
 UINT8 frame_skip = 6;
 
-void	interact(UINT8 tile) {
 
-	if ((tile == 0x1c) && (joypad() & J_A))
-		show_message("C'est la gamelle\ndu chat...");
+#include <stdio.h>
+
+void	interact() {
+
+	UINT8 cx = player_pos_world[0];
+	UINT8 cy = player_pos_world[1];
+	UINT8 tile;
+
+	if (player_direction == PLAYER_DIRECTION_RIGHT || player_direction == PLAYER_DIRECTION_UP) {
+		if (player_direction == PLAYER_DIRECTION_RIGHT)
+		{
+			cx = cx + 1;
+			cy = cy - 1;
+		}
+		else {
+			cx = cx;
+			cy = cy - 2;
+		}
+		get_bkg_tiles(cx, cy , 1, 1, &tile);
+	//	printf("cx %d    ", cx);
+	//	printf("cy %d    ", cy);
+		if (tile == 0x1d || tile == 0x3d || tile == 0x44 || tile == 0x47)
+			show_message("C'est la gamelle\ndu chat.\nElle est vide...");
+	}
 }
 
 /* @UINT8	can_player_move(INT8 dx, INT8 dy);	 */
@@ -48,8 +69,6 @@ UINT8	can_player_move(INT8 dx, INT8 dy) {
 	UINT8 cy = (player_pos_world[1] + dy) - 1;	// -1 or +1, it's a problem, we step on the left side of the furnitures
 	UINT8 tile;
 	get_bkg_tiles(cx, cy, 1, 1, &tile);
-	//if (dx == 0 && dy == 0)
-		interact(tile);
 // don't exit the screen
 // ! it's not in pixel, but in square of the grid, one by one
 	if ((player_pos_world[0] + dx < 1) ||
@@ -62,7 +81,6 @@ UINT8	can_player_move(INT8 dx, INT8 dy) {
 			tile == 0x29 || tile == 0x2A || tile == 0x27 ||
 			tile == 0x28);
 }
-
 
 void	move_player(INT8 dx, INT8 dy) {
 
@@ -140,6 +158,9 @@ void	game(void) {
 	else if (joypad() & J_RIGHT) {
 		player_direction = PLAYER_DIRECTION_RIGHT;
 			move_player(+1, 0);
+	}
+	if (joypad() & J_A) {
+		interact();
 	}
 }
 
