@@ -2,7 +2,8 @@
 
 :radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority<br><br><br>
 
-:exclamation::exclamation::radio_button: interact without walk...<br>
+:exclamation::radio_button: intercat with all the background<br>
+:exclamation::radio_button: hide the sprite when window + sprite at the bottom of the screen<br>
 :exclamation::radio_button: create sprites for cat and roomate<br>
 :radio_button: add a cat<br>
 :radio_button: add a roomate<br>
@@ -13,6 +14,7 @@
 
 :radio_button: exterior with a scroll (! the player moves with the screen limits)<br>
 
+:ballot_box_with_check: interact without walk...<br>
 :ballot_box_with_check: correct player animation when colision, should move in the right direction<br>
 :ballot_box_with_check: clean the title screen and found the dot bug<br>
 :ballot_box_with_check: change player colors<br>
