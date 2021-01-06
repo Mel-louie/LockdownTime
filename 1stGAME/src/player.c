@@ -27,7 +27,7 @@ UINT8 player_pos_screen[2];
 UINT8 player_pos_world[2];
 UINT8 player_direction;
 UINT8 player_animation_frame;
-UINT8 frame_skip = 4;
+UINT8 frame_skip = 6;
 
 /* @UINT8	can_player_move(INT8 dx, INT8 dy);	 */
 /*												 */
@@ -56,16 +56,21 @@ UINT8	can_player_move(INT8 dx, INT8 dy) {
 
 void	move_player(INT8 dx, INT8 dy) {
 
+	UBYTE flag = 0;
 	if (!can_player_move(dx, dy))
-		return;
+		flag = 1;
 	// init the new position of the player by adding the value of the move_player()
-	player_pos_world[0] += dx;
-	player_pos_world[1] += dy;
-
+	// if !flag, collision so no new pos but movement still
+	if (!flag) {
+		player_pos_world[0] += dx;
+		player_pos_world[1] += dy;
+	}
 	for (UINT8 delta = 8 ; delta ; delta--) {	// moving 8 squares by 8 squares, maybe change in 16x16
 	// move player
+	if (!flag) {
 		player_pos_screen[0] += dx;
 		player_pos_screen[1] += dy;
+	}
 		move_sprite(PLAYER_SPRITE_L_ID, player_pos_screen[0], player_pos_screen[1]);
 		move_sprite(PLAYER_SPRITE_R_ID, player_pos_screen[0] + 8, player_pos_screen[1]);
 		perform_delay_player(1);
@@ -101,7 +106,7 @@ void	move_player(INT8 dx, INT8 dy) {
 			}
 			// to pass at the next sprite of the tileset
 			player_animation_frame = (player_animation_frame + 1) % 4;
-			frame_skip = 4;
+			frame_skip = 6;
 		}
 	}
 }
