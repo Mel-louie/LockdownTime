@@ -74,7 +74,7 @@ void	show_message(unsigned char *str) {
 			newline = 2;
 		}
 		i++;
-		perform_delay_player(4);
+		perform_delay_player(2);
 	}
 
 	while (!(joypad() & J_A))

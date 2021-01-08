@@ -10,11 +10,13 @@
 #include "tilemap_home.h"
 #include "tileset_home.h"
 #include "tiles_player.h"
-#include "tileset_screen.h"
-#include "tilemap_screen.h"
 #include "text.h"
 #include "tileset_font.h"
 #include "tiles_cat.h"
+#include "tiles_player_one.h"
+#include "tiles_png_one.h"
+#include "tilemap_screen_new.h"
+#include "tileset_screen_new.h"
 
 /*
 ** FUNCTIONS

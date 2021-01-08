@@ -1,19 +1,19 @@
 # To do
 
-:radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority<br><br><br>
+:radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority; :scissors: not a thing anymore<br><br><br>
 
-:exclamation::radio_button: intercat with all the background<br>
+:exclamation::radio_button: interact with all the background<br>
 :exclamation::radio_button: hide the sprite when window + sprite at the bottom of the screen<br>
-:exclamation::radio_button: create sprites for cat and roomate<br>
 :radio_button: add a cat<br>
 :radio_button: add a roomate<br>
-:radio_button: recreate tilesets<br>
 :radio_button: add a gif in this readme of the game/titlescreen<br>
 :radio_button: adding some text and intercations with items<br>
 :radio_button: adding sound<br>
 
 :radio_button: exterior with a scroll (! the player moves with the screen limits)<br>
 
+:scissors: recreate tilesets (i'll do that for a real game)<br>
+:ballot_box_with_check: create sprites for cat and roomate<br>
 :ballot_box_with_check: interact without walk...<br>
 :ballot_box_with_check: correct player animation when colision, should move in the right direction<br>
 :ballot_box_with_check: clean the title screen and found the dot bug<br>

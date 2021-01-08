@@ -49,8 +49,10 @@ void	title_screen(void) {
 	perform_delay_player(45);
 	BGP_REG = 0xe4; // puts back the PALETTE to its init point, very important to not have a forever with/black background
 
-	set_bkg_data(0, TILESETSC_TILE_COUNT, TILESETSC);
-	set_bkg_tiles(0, 0, TILEMAPSC_WIDTH, TILEMAPSC_HEIGHT, TILEMAPSC);
+/*	set_bkg_data(0, TILESETSC_TILE_COUNT, TILESETSC);
+	set_bkg_tiles(0, 0, TILEMAPSC_WIDTH, TILEMAPSC_HEIGHT, TILEMAPSC);*/
+	set_bkg_data(0, TILESETSC_NEW_TILE_COUNT, TILESETSC_NEW);
+	set_bkg_tiles(0, 0, TILEMAPSC_NEW_WIDTH, TILEMAPSC_NEW_HEIGHT, TILEMAPSC_NEW);
 	SHOW_BKG;
 
 	// TEXT

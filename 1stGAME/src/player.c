@@ -51,8 +51,17 @@ void	interact() {
 		get_bkg_tiles(cx, cy , 1, 1, &tile);
 	//	printf("cx %d    ", cx);
 	//	printf("cy %d    ", cy);
-		if (tile == 0x1d || tile == 0x3d || tile == 0x44 || tile == 0x47)
+	//	printf("tile %d    ", tile);
+		if (tile == 0x1d)
 			show_message("C'est la gamelle\ndu chat.\nElle est vide...");
+		else if (tile == 0x3d || tile == 0x3e || tile == 0x44 || tile == 0x47 || tile == 0x48)
+			show_message("La plante n'a pas\nl'air d'avoir soif.");
+		else if (tile == 0x26 || tile == 0x21 || tile == 0x20)
+			show_message("C'est une\nsuper nintendo.");
+		else if (tile == 0x1f)
+			show_message("Le frigo est\npresque vide.\nJe devrais faire\ndes course.");
+		else if (tile == 0x42)
+			show_message("Il y a un email :\n\'chers concitoyens,\nle confinement\ndurera encore\n42 jours\n\nBisous,\nle gouvernement\'");
 	}
 }
 
@@ -180,10 +189,14 @@ void	init_game(void) {
 	player_animation_frame = 0;
 
 	// load tiles sprites in video memory
-	set_sprite_data(0, PLAYER_SPRITES1_TILE_COUNT, PLAYER_SPRITES1);
-	set_sprite_tile(0, 0);
+/*	set_sprite_data(0, PLAYER_SPRITES1_TILE_COUNT, PLAYER_SPRITES1);
+	set_sprite_tile(0, 0);*/
 /*	set_sprite_data(0, CAT_TILE_COUNT, CAT); // the player is a cat
 	set_sprite_tile(0, 0);*/
+/*	set_sprite_data(0, PLAYER_ONE_TILE_COUNT, PLAYER_ONE);
+	set_sprite_tile(0, 0);*/
+	set_sprite_data(0, PNG_ONE_TILE_COUNT, PNG_ONE);
+	set_sprite_tile(0, 0);
 
 	// init the 2nd part of the player, 'cause the sprite is a metaSprite (16x16)
     set_sprite_tile(1, 2);
