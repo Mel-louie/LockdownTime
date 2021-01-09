@@ -25,7 +25,7 @@
 UINT8	perform_delay(UINT8 time);
 void	perform_delay_player(UINT8 time);
 void	clear_title_screen(void);
-void	sleep_animation(void);
+void	sleep_animation(UINT8 player_x, UINT8 player_y);
 
 /* Screens */
 void	splash_screen(void);
@@ -40,5 +40,5 @@ void	game(void);
 void	interact(void);
 
 /* Messages boxes */
-void	show_message_box(void);
-void	show_message(unsigned char *str);
+void	show_message_box(UINT8 player_y);
+void	show_message(unsigned char *str, UINT8 player_x, UINT8 player_y);

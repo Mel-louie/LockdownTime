@@ -55,11 +55,12 @@ void	clear_title_screen(void) {
 	HIDE_BKG;
 }
 
-void	sleep_animation(void) {
+void	sleep_animation(UINT8 player_x, UINT8 player_y) {
 
 	HIDE_WIN;
 	perform_delay_player(50);
-	HIDE_SPRITES;
+	move_sprite(0, 0, 0);
+	move_sprite(1, 0 + 8, 0);
 	BGP_REG = 0xf9;
 	perform_delay_player(50);
 	BGP_REG = 0xfe;
@@ -70,8 +71,8 @@ void	sleep_animation(void) {
 	perform_delay_player(50);
 	BGP_REG = 0xf9;
 	perform_delay_player(50);
-	SHOW_SPRITES;
+	move_sprite(0, player_x, player_y);
+	move_sprite(1, player_x + 8, player_y);	
 	BGP_REG = 0xe4;
-	SHOW_BKG;
 	SHOW_WIN;
 }

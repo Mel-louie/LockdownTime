@@ -58,21 +58,21 @@ void	interact() {
 	//	printf("tile %d    ", tile);
 
 	if (tile == 0x1d)
-		show_message("C'est la gamelle\ndu chat.\nElle est vide...");
+		show_message("C'est la gamelle\ndu chat.\nElle est vide...", player_pos_screen[0], player_pos_screen[1]);
 	else if (tile == 0x3d || tile == 0x3e || tile == 0x44 || tile == 0x45 || tile == 0x47 || tile == 0x48)
-		show_message("La plante n'a pas\nl'air d'avoir soif.");
+		show_message("La plante n'a pas\nl'air d'avoir soif.", player_pos_screen[0], player_pos_screen[1]);
 	else if (tile == 0x26 || tile == 0x21 || tile == 0x20)
-		show_message("C'est une\nsuper nintendo.\nElle fait un\nbruit bizarre.");
+		show_message("C'est une\nsuper nintendo.\nElle fait un\nbruit bizarre.", player_pos_screen[0], player_pos_screen[1]);
 	else if (tile == 0x1f)
-		show_message("Le frigo est\npresque vide.\nJe devrais faire\ndes course.");
+		show_message("Le frigo est\npresque vide.\nJe devrais faire\ndes courses.", player_pos_screen[0], player_pos_screen[1]);
 	else if (tile == 0x42)
-		show_message("Il y a un email :\n\'chers concitoyens,\nle confinement\ndurera encore\n42 jours\n\nBisous,\nle gouvernement\'");
+		show_message("Il y a un email :\n\'chers concitoyens,\nle confinement\ndurera encore\n42 jours\n\nBisous,\nle gouvernement\'", player_pos_screen[0], player_pos_screen[1]);
 	else if (tile == 0x40)
-		show_message("Une douce\nmusique sort du\nposte de radio.\n");
+		show_message("Une douce\nmusique sort du\nposte de radio.\n", player_pos_screen[0], player_pos_screen[1]);
 	else if (tile == 22) {
-		show_message("Je vais faire\nune sieste...\n");
-		sleep_animation();
-		show_message("Le temps\npasse lentement\ndurant le\nconfinement...\n");
+		show_message("Je vais faire\nune sieste...\n", player_pos_screen[0], player_pos_screen[1]);
+		sleep_animation(player_pos_screen[0], player_pos_screen[1]);
+		show_message("Le temps\npasse lentement\ndurant le\nconfinement...\n", player_pos_screen[0], player_pos_screen[1]);
 	}
 }
 
