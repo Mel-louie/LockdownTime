@@ -71,11 +71,7 @@ void	interact() {
 		show_message("Une douce\nmusique sort du\nposte de radio.\n");
 	else if (tile == 22) {
 		show_message("Je vais faire\nune sieste...\n");
-		HIDE_SPRITES;
-		clear_title_screen();
-		SHOW_SPRITES;
-		SHOW_BKG;
-		SHOW_WIN;
+		sleep_animation();
 		show_message("Le temps\npasse lentement\ndurant le\nconfinement...\n");
 	}
 }

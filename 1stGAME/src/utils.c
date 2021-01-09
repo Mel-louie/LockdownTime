@@ -54,3 +54,24 @@ void	clear_title_screen(void) {
 	HIDE_WIN;
 	HIDE_BKG;
 }
+
+void	sleep_animation(void) {
+
+	HIDE_WIN;
+	perform_delay_player(50);
+	HIDE_SPRITES;
+	BGP_REG = 0xf9;
+	perform_delay_player(50);
+	BGP_REG = 0xfe;
+	perform_delay_player(50);
+	BGP_REG = 0xff;
+	perform_delay_player(90);
+	BGP_REG = 0xfe;
+	perform_delay_player(50);
+	BGP_REG = 0xf9;
+	perform_delay_player(50);
+	SHOW_SPRITES;
+	BGP_REG = 0xe4;
+	SHOW_BKG;
+	SHOW_WIN;
+}

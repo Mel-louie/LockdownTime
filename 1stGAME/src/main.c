@@ -7,10 +7,10 @@
 
 void	main(void) {
 
-	splash_screen();
-	HIDE_BKG;
-	title_screen();
-	clear_title_screen();
+//	splash_screen();
+//	HIDE_BKG;
+//	title_screen();
+//	clear_title_screen();
 
 	init_game();
 	while (1) {

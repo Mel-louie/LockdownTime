@@ -25,6 +25,7 @@
 UINT8	perform_delay(UINT8 time);
 void	perform_delay_player(UINT8 time);
 void	clear_title_screen(void);
+void	sleep_animation(void);
 
 /* Screens */
 void	splash_screen(void);
