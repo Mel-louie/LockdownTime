@@ -36,6 +36,7 @@ void	init_map(void);
 /* Player */
 void	init_game(void);
 void	game(void);
+void	interact(void);
 
 /* Messages boxes */
 void	show_message_box(void);

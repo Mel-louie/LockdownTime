@@ -29,8 +29,7 @@ UINT8 player_direction;
 UINT8 player_animation_frame;
 UINT8 frame_skip = 6;
 
-
-#include <stdio.h>
+#include <stdio.h> // tests and debug
 
 void	interact() {
 
@@ -38,30 +37,46 @@ void	interact() {
 	UINT8 cy = player_pos_world[1];
 	UINT8 tile;
 
-	if (player_direction == PLAYER_DIRECTION_RIGHT || player_direction == PLAYER_DIRECTION_UP) {
-		if (player_direction == PLAYER_DIRECTION_RIGHT)
-		{
-			cx = cx + 1;
-			cy = cy - 1;
-		}
-		else {
-			cx = cx;
-			cy = cy - 2;
-		}
-		get_bkg_tiles(cx, cy , 1, 1, &tile);
-	//	printf("cx %d    ", cx);
-	//	printf("cy %d    ", cy);
+	if (player_direction == PLAYER_DIRECTION_RIGHT) {
+		cx = cx + 1;
+		cy = cy - 1;
+	}
+	else if (player_direction == PLAYER_DIRECTION_DOWN) {
+		cy = cy + 2;
+	}
+	else if (player_direction == PLAYER_DIRECTION_UP) {
+		cy = cy - 2;
+	}
+	else if (player_direction == PLAYER_DIRECTION_LEFT) {
+		cx = cx - 2;
+		cy = cy - 1;
+	}
+		
+	get_bkg_tiles(cx , cy , 1, 1, &tile);
+	//	printf("cx %d    ", cx );	// tests and debug
+	//	printf("cy %d    ", cy );
 	//	printf("tile %d    ", tile);
-		if (tile == 0x1d)
-			show_message("C'est la gamelle\ndu chat.\nElle est vide...");
-		else if (tile == 0x3d || tile == 0x3e || tile == 0x44 || tile == 0x47 || tile == 0x48)
-			show_message("La plante n'a pas\nl'air d'avoir soif.");
-		else if (tile == 0x26 || tile == 0x21 || tile == 0x20)
-			show_message("C'est une\nsuper nintendo.");
-		else if (tile == 0x1f)
-			show_message("Le frigo est\npresque vide.\nJe devrais faire\ndes course.");
-		else if (tile == 0x42)
-			show_message("Il y a un email :\n\'chers concitoyens,\nle confinement\ndurera encore\n42 jours\n\nBisous,\nle gouvernement\'");
+
+	if (tile == 0x1d)
+		show_message("C'est la gamelle\ndu chat.\nElle est vide...");
+	else if (tile == 0x3d || tile == 0x3e || tile == 0x44 || tile == 0x45 || tile == 0x47 || tile == 0x48)
+		show_message("La plante n'a pas\nl'air d'avoir soif.");
+	else if (tile == 0x26 || tile == 0x21 || tile == 0x20)
+		show_message("C'est une\nsuper nintendo.\nElle fait un\nbruit bizarre.");
+	else if (tile == 0x1f)
+		show_message("Le frigo est\npresque vide.\nJe devrais faire\ndes course.");
+	else if (tile == 0x42)
+		show_message("Il y a un email :\n\'chers concitoyens,\nle confinement\ndurera encore\n42 jours\n\nBisous,\nle gouvernement\'");
+	else if (tile == 0x40)
+		show_message("Une douce\nmusique sort du\nposte de radio.\n");
+	else if (tile == 22) {
+		show_message("Je vais faire\nune sieste...\n");
+		HIDE_SPRITES;
+		clear_title_screen();
+		SHOW_SPRITES;
+		SHOW_BKG;
+		SHOW_WIN;
+		show_message("Le temps\npasse lentement\ndurant le\nconfinement...\n");
 	}
 }
 
