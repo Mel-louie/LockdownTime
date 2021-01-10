@@ -12,8 +12,11 @@ void	main(void) {
 //	title_screen();
 //	clear_title_screen();
 
+	sprites		pl;
+
+	pl.o = 0;
 	init_game();
 	while (1) {
-		game();
+		game(&pl);
 	}
 }
