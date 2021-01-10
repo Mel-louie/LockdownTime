@@ -154,7 +154,7 @@ void	game(sprites *pl) {
 
 	if (!pl->o)
 		init_sprites(pl);
-	pl->player_direction = PLAYER_DIRECTION_DOWN;
+//	pl->player_direction = PLAYER_DIRECTION_DOWN;
 	if (joypad() & J_UP) {
 		pl->player_direction = PLAYER_DIRECTION_UP;		// init the direction according to the joypad
 			move_player(0, -1, pl);						// increment or decrement the square of the grid where is the player,

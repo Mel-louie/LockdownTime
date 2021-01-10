@@ -2,7 +2,6 @@
 
 :radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority; :scissors: not a thing anymore<br><br><br>
 
-:exclamation::radio_button: to fix: bug intercat when moving<br>
 :radio_button: add a cat<br>
 :radio_button: add a roomate<br>
 :radio_button: update the readme's gif<br>
@@ -10,6 +9,7 @@
 
 :radio_button: exterior with a scroll (! the player moves with the screen limits)<br>
 
+:ballot_box_with_check: to fix: bug intercat when moving<br>
 :ballot_box_with_check: refacto with struct for the sprites<br>
 :ballot_box_with_check: hide the sprite when window + sprite at the bottom of the screen<br>
 :ballot_box_with_check: interact with all the background<br>
