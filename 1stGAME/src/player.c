@@ -14,9 +14,9 @@ UINT8 PLAYER_ANIMATION_DOWN[] = {0, 4, 0, 8};
 // sub-animation starts in the global data of the
 // player
 #define PLAYER_DIRECTION_DOWN	0
-#define PLAYER_DIRECTION_UP		6
-#define PLAYER_DIRECTION_RIGHT	12
-#define PLAYER_DIRECTION_LEFT	18
+#define PLAYER_DIRECTION_UP		1
+#define PLAYER_DIRECTION_RIGHT	2
+#define PLAYER_DIRECTION_LEFT	3
 
 #include <stdio.h> // tests and debug
 
@@ -42,8 +42,8 @@ void	interact(sprites *pl) {
 	}
 		
 	get_bkg_tiles(cx , cy , 1, 1, &tile);
-	//	printf("cx %d    ", cx );	// tests and debug
-	//	printf("cy %d    ", cy );
+		printf("cx %d    ", cx );	// tests and debug
+		printf("cy %d    ", cy );
 	//	printf("tile %d    ", tile);
 
 	if (tile == 0x1d)
@@ -185,6 +185,7 @@ void	init_game(void) {
 	// init the sprites palette
 	OBP0_REG = OBP1_REG = 0xe2; // choosen colors
 	SPRITES_8x16;
+	SHOW_SPRITES;
 
 	//show_message("Hello young player.\nPress A to scroll\nthe text.\nGreat ! :)");
 }
