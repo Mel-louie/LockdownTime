@@ -20,7 +20,7 @@ UINT8 PLAYER_ANIMATION_DOWN[] = {0, 4, 0, 8};
 
 #include <stdio.h> // tests and debug
 
-void	interact(sprites *pl) {
+void	interact(sprites *pl, sprites *cat, sprites *roomate) {
 
 	UINT8 cx = pl->player_pos_world[0];
 	UINT8 cy = pl->player_pos_world[1];
@@ -42,8 +42,8 @@ void	interact(sprites *pl) {
 	}
 		
 	get_bkg_tiles(cx , cy , 1, 1, &tile);
-		printf("cx %d    ", cx );	// tests and debug
-		printf("cy %d    ", cy );
+	//	printf("cx %d    ", cx );	// tests and debug
+	//	printf("cy %d    ", cy );
 	//	printf("tile %d    ", tile);
 
 	if (tile == 0x1d)
@@ -58,9 +58,9 @@ void	interact(sprites *pl) {
 		show_message("Il y a un email :\n\'chers concitoyens,\nle confinement\ndurera encore\n42 jours\n\nBisous,\nle gouvernement\'", pl->player_pos_screen[0], pl->player_pos_screen[1]);
 	else if (tile == 0x40)
 		show_message("Une douce\nmusique sort du\nposte de radio.\n", pl->player_pos_screen[0], pl->player_pos_screen[1]);
-	else if (tile == 22) {
+	else if (tile == 22 || tile == 36) {
 		show_message("Je vais faire\nune sieste...\n", pl->player_pos_screen[0], pl->player_pos_screen[1]);
-		sleep_animation(pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		sleep_animation(pl, cat, roomate);
 		show_message("Le temps\npasse lentement\ndurant le\nconfinement...\n", pl->player_pos_screen[0], pl->player_pos_screen[1]);
 	}
 }
@@ -150,10 +150,10 @@ void	move_player(INT8 dx, INT8 dy, sprites *pl) {
 	}
 }
 
-void	game(sprites *pl) {
+void	game(sprites *pl, sprites *cat, sprites *roomate) {
 
 	if (!pl->o)
-		init_sprites(pl);
+		init_sprites(pl, cat, roomate);
 //	pl->player_direction = PLAYER_DIRECTION_DOWN;
 	if (joypad() & J_UP) {
 		pl->player_direction = PLAYER_DIRECTION_UP;		// init the direction according to the joypad
@@ -172,7 +172,7 @@ void	game(sprites *pl) {
 			move_player(+1, 0, pl);
 	}
 	if (joypad() & J_A) {
-		interact(pl);
+		interact(pl, cat, roomate);
 	}
 }
 

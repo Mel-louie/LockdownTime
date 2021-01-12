@@ -55,12 +55,16 @@ void	clear_title_screen(void) {
 	HIDE_BKG;
 }
 
-void	sleep_animation(UINT8 player_x, UINT8 player_y) {
+void	sleep_animation(sprites *pl, sprites *cat, sprites *roomate) {
 
 	HIDE_WIN;
 	perform_delay_player(50);
 	move_sprite(0, 0, 0);
 	move_sprite(1, 0 + 8, 0);
+	move_sprite(3, 0, 0);
+	move_sprite(4, 0 + 8, 0);
+	move_sprite(5, 0, 0);
+	move_sprite(6, 0 + 8, 0);
 	BGP_REG = 0xf9;
 	perform_delay_player(50);
 	BGP_REG = 0xfe;
@@ -71,8 +75,12 @@ void	sleep_animation(UINT8 player_x, UINT8 player_y) {
 	perform_delay_player(50);
 	BGP_REG = 0xf9;
 	perform_delay_player(50);
-	move_sprite(0, player_x, player_y);
-	move_sprite(1, player_x + 8, player_y);	
+	move_sprite(0, pl->player_pos_screen[0], pl->player_pos_screen[1]);
+	move_sprite(1, pl->player_pos_screen[0] + 8, pl->player_pos_screen[1]);
+	move_sprite(3, cat->player_pos_screen[0], cat->player_pos_screen[1]);
+	move_sprite(4, cat->player_pos_screen[0] + 8, cat->player_pos_screen[1]);
+	move_sprite(5, roomate->player_pos_screen[0], roomate->player_pos_screen[1]);
+	move_sprite(6, roomate->player_pos_screen[0] + 8, roomate->player_pos_screen[1]);	
 	BGP_REG = 0xe4;
 	SHOW_WIN;
 }

@@ -12,11 +12,13 @@ void	main(void) {
 //	title_screen();
 //	clear_title_screen();
 
-	sprites		pl;
+	sprites	pl;
+	sprites	cat;
+	sprites roomate;
 
 	pl.o = 0;
 	init_game();
 	while (1) {
-		game(&pl);
+		game(&pl, &cat, &roomate);
 	}
 }
