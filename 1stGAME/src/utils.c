@@ -55,6 +55,15 @@ void	clear_title_screen(void) {
 	HIDE_BKG;
 }
 
+const UWORD palette_sleep[] =
+{
+	CGB_PAL(31,31,24), CGB_PAL(0,20,25), CGB_PAL(0,10,13), CGB_PAL(10,0,10), // origin state: BGP_REG = 0xe4
+	CGB_PAL(0,20,25), CGB_PAL(0,20,25), CGB_PAL(0,10,13), CGB_PAL(10,0,10), // BGP_REG = 0xf9
+	CGB_PAL(0,10,13), CGB_PAL(0,10,13), CGB_PAL(0,10,13), CGB_PAL(10,0,10), // BGP_REG = 0xfe
+	CGB_PAL(10,0,10), CGB_PAL(10,0,10), CGB_PAL(10,0,10), CGB_PAL(10,0,10), // BGP_REG = 0xff
+};
+
+
 void	sleep_animation(sprites *pl, sprites *cat, sprites *roomate) {
 
 	HIDE_WIN;
@@ -65,15 +74,20 @@ void	sleep_animation(sprites *pl, sprites *cat, sprites *roomate) {
 	move_sprite(4, 0 + 8, 0);
 	move_sprite(5, 0, 0);
 	move_sprite(6, 0 + 8, 0);
-	BGP_REG = 0xf9;
+	BGP_REG = 0xf9;									// gb
+	set_bkg_palette( 0, 1, &palette_sleep[4] );		// gbc
 	perform_delay_player(50);
 	BGP_REG = 0xfe;
+	set_bkg_palette( 0, 1, &palette_sleep[8] );
 	perform_delay_player(50);
 	BGP_REG = 0xff;
+	set_bkg_palette( 0, 1, &palette_sleep[12] );
 	perform_delay_player(90);
 	BGP_REG = 0xfe;
+	set_bkg_palette( 0, 1, &palette_sleep[8] );
 	perform_delay_player(50);
 	BGP_REG = 0xf9;
+	set_bkg_palette( 0, 1, &palette_sleep[4] );
 	perform_delay_player(50);
 	move_sprite(0, pl->player_pos_screen[0], pl->player_pos_screen[1]);
 	move_sprite(1, pl->player_pos_screen[0] + 8, pl->player_pos_screen[1]);
@@ -82,5 +96,6 @@ void	sleep_animation(sprites *pl, sprites *cat, sprites *roomate) {
 	move_sprite(5, roomate->player_pos_screen[0], roomate->player_pos_screen[1]);
 	move_sprite(6, roomate->player_pos_screen[0] + 8, roomate->player_pos_screen[1]);	
 	BGP_REG = 0xe4;
+	set_bkg_palette( 0, 1, &palette_sleep[0] );
 	SHOW_WIN;
 }

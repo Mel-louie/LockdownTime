@@ -31,7 +31,7 @@ _END		= "\033[0m"
 all:
 	@echo $(_BLUE)"Building ... "$(_YELLOW)
 #	@$(MAKE) -C $(SRC_DIR) # to compile with gbdk-n; or gbdk2020:
-	@./lib/gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -o game.gb src/*.c
+	@./lib/gbdk2020/bin/lcc -Wa-l -Wm-yc -Wl-m -Wl-j -o game.gb src/*.c
 #	@echo $(_BLUE)"Copy "$(_YELLOW)$(GAME)$(_BLUE)" in the current directory..."$(_END)
 #	@cp $(SRC_DIR)$(GAME) .
 	@echo $(_GREEN)"Done!"$(_END)

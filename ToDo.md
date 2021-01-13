@@ -2,13 +2,13 @@
 
 :radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority; :scissors: not a thing anymore<br><br><br>
 
-:radio_button: collision with png<br>
-:radio_button: animate png<br>
 :radio_button: update the readme's gif<br>
 :radio_button: adding sound<br>
 
 :radio_button: exterior with a scroll (! the player moves with the screen limits)<br>
 
+:ballot_box_with_check: collision with png<br>
+:ballot_box_with_check: animate png<br>
 :ballot_box_with_check: add a cat<br>
 :ballot_box_with_check: add a roomate<br>
 :ballot_box_with_check: to fix: bug intercat when moving<br>

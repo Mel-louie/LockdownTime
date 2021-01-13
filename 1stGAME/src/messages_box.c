@@ -20,7 +20,7 @@ void	show_message_box(UINT8 player_y) {
 		move_win(7, y);
 		wait_vbl_done();
 	}
-	if (player_y >= y_end) {
+	if (player_y > y_end + 5) {
 		move_sprite(0, 0, 0);
 		move_sprite(1, 0 + 8, 0);
 	}
@@ -36,7 +36,7 @@ void	hide_message_box(UINT8 player_x, UINT8 player_y) {
 		move_win(7, y);
 		wait_vbl_done();
 	}
-	if (player_y >= y_end) {
+	if (player_y > y_end + 5) {
 		move_sprite(0, player_x, player_y);
 		move_sprite(1, player_x + 8, player_y);
 	}

@@ -65,6 +65,7 @@ void	init_sprites(sprites *pl, sprites *cat, sprites *roomate) {
 	init_player(pl);
 	init_cat(cat);
 	init_png(roomate);
+
 	/*player_pos_world[0] = 10;
 	player_pos_world[1] = 9;
 	player_pos_screen[0] = player_pos_world[0] * 8;

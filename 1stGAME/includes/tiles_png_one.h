@@ -4,7 +4,7 @@
 #define _TILES_PNG_ONE_H
 
 extern const UINT8 PNG_ONE[];
-#define PNG_ONE_TILE_COUNT 36
+#define PNG_ONE_TILE_COUNT 48
 
 
 #endif

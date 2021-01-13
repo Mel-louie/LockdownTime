@@ -10,6 +10,11 @@ UINT8 PLAYER_ANIMATION_SIDE[] = {24, 28, 24, 32};
 UINT8 PLAYER_ANIMATION_UP[] = {12, 16, 12, 20};
 UINT8 PLAYER_ANIMATION_DOWN[] = {0, 4, 0, 8};
 
+// datas to animate the cat 
+UINT8 CAT_ANIMATION_SIDE[] = {39 + 24, 39 + 28, 39 + 24, 39 + 32};
+UINT8 CAT_ANIMATION_UP[] = {39 + 12, 39 + 16, 39 + 12, 39 + 20};
+UINT8 CAT_ANIMATION_DOWN[] = {39, 39 + 4, 39, 39 + 8};
+
 // the numbers represent the byte where the
 // sub-animation starts in the global data of the
 // player
@@ -20,12 +25,13 @@ UINT8 PLAYER_ANIMATION_DOWN[] = {0, 4, 0, 8};
 
 #include <stdio.h> // tests and debug
 
-void	interact(sprites *pl, sprites *cat, sprites *roomate) {
+void	interact(sprites *pl, sprites *cat, sprites *rmt) {
 
 	UINT8 cx = pl->player_pos_world[0];
 	UINT8 cy = pl->player_pos_world[1];
 	UINT8 tile;
-
+	//printf("cx %d    ", cx );	// tests and debug
+	//	printf("cy %d    ", cy );
 	if (pl->player_direction == PLAYER_DIRECTION_RIGHT) {
 		cx = cx + 1;
 		cy = cy - 1;
@@ -60,8 +66,85 @@ void	interact(sprites *pl, sprites *cat, sprites *roomate) {
 		show_message("Une douce\nmusique sort du\nposte de radio.\n", pl->player_pos_screen[0], pl->player_pos_screen[1]);
 	else if (tile == 22 || tile == 36) {
 		show_message("Je vais faire\nune sieste...\n", pl->player_pos_screen[0], pl->player_pos_screen[1]);
-		sleep_animation(pl, cat, roomate);
+		sleep_animation(pl, cat, rmt);
 		show_message("Le temps\npasse lentement\ndurant le\nconfinement...\n", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+	}
+	
+	if (pl->player_direction == PLAYER_DIRECTION_RIGHT &&
+	pl->player_pos_world[0] + 1 == rmt->player_pos_world[0] - 1 && pl->player_pos_world[1] == rmt->player_pos_world[1]) {
+		set_sprite_tile(5, 107);
+		set_sprite_tile(6, 109);
+		show_message("Tu crois\nqu'on en aura\nbientot\ntermine ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		perform_delay_player(10);
+		set_sprite_tile(5, 70);
+		set_sprite_tile(6, 72);
+	}
+	else if (pl->player_direction == PLAYER_DIRECTION_LEFT &&
+	pl->player_pos_world[0] - 2 == rmt->player_pos_world[0] && pl->player_pos_world[1] == rmt->player_pos_world[1]) {
+		set_sprite_tile(5, 94);
+		set_sprite_tile(6, 96);
+		show_message("Tu crois\nqu'on en aura\nbientot\ntermine ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		perform_delay_player(10);
+		set_sprite_tile(5, 70);
+		set_sprite_tile(6, 72);
+	}
+	else if (pl->player_direction == PLAYER_DIRECTION_DOWN &&
+	pl->player_pos_world[0] == rmt->player_pos_world[0] && pl->player_pos_world[1] == rmt->player_pos_world[1] - 2) {
+		set_sprite_tile(5, 82);
+		set_sprite_tile(6, 84);
+		show_message("Tu crois\nqu'on en aura\nbientot\ntermine ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		perform_delay_player(10);
+		set_sprite_tile(5, 70);
+		set_sprite_tile(6, 72);
+	}
+
+	else if (pl->player_direction == PLAYER_DIRECTION_RIGHT &&
+	pl->player_pos_world[0] + 2 == cat->player_pos_world[0]  && pl->player_pos_world[1] == cat->player_pos_world[1]) {
+		set_sprite_prop(3, get_sprite_prop(3) | S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) | S_FLIPX);
+		set_sprite_tile(3, CAT_ANIMATION_SIDE[cat->player_animation_frame] + 2);
+		set_sprite_tile(4, CAT_ANIMATION_SIDE[cat->player_animation_frame]);
+		show_message("Meow ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, 62);
+		set_sprite_tile(4, 64);
+	}
+	else if (pl->player_direction == PLAYER_DIRECTION_LEFT &&
+	pl->player_pos_world[0] - 2 == cat->player_pos_world[0] && pl->player_pos_world[1] == cat->player_pos_world[1]) {
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, CAT_ANIMATION_SIDE[cat->player_animation_frame]);
+		set_sprite_tile(4, CAT_ANIMATION_SIDE[cat->player_animation_frame] + 2);
+		show_message("Meow ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, 62);
+		set_sprite_tile(4, 64);
+	}
+	else if (pl->player_direction == PLAYER_DIRECTION_DOWN &&
+	pl->player_pos_world[0] == cat->player_pos_world[0] && pl->player_pos_world[1] == cat->player_pos_world[1] - 2) {
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, CAT_ANIMATION_UP[cat->player_animation_frame]);
+		set_sprite_tile(4, CAT_ANIMATION_UP[cat->player_animation_frame] + 2);
+		show_message("Meow ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, 62);
+		set_sprite_tile(4, 64);
+	}
+	else if (pl->player_direction == PLAYER_DIRECTION_UP &&
+	pl->player_pos_world[0] == cat->player_pos_world[0] && pl->player_pos_world[1] == cat->player_pos_world[1] + 1) {
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, CAT_ANIMATION_DOWN[cat->player_animation_frame]);
+		set_sprite_tile(4, CAT_ANIMATION_DOWN[cat->player_animation_frame] + 2);
+		show_message("Meow ?", pl->player_pos_screen[0], pl->player_pos_screen[1]);
+		set_sprite_prop(3, get_sprite_prop(3) & ~S_FLIPX);
+		set_sprite_prop(4, get_sprite_prop(4) & ~S_FLIPX);
+		set_sprite_tile(3, 62);
+		set_sprite_tile(4, 64);
 	}
 }
 
@@ -72,7 +155,7 @@ void	interact(sprites *pl, sprites *cat, sprites *roomate) {
 /* time: can adjust for hoz much loop it can be  */
 /* slow; 										 */
 
-UINT8	can_player_move(INT8 dx, INT8 dy, sprites *pl) {
+UINT8	can_player_move(INT8 dx, INT8 dy, sprites *pl, sprites *cat, sprites *rmt) {
 
 	UINT8 cx = (pl->player_pos_world[0] + dx) - 1;
 	UINT8 cy = (pl->player_pos_world[1] + dy) - 1;	// -1 or +1, it's a problem, we step on the left side of the furnitures
@@ -83,7 +166,23 @@ UINT8	can_player_move(INT8 dx, INT8 dy, sprites *pl) {
 	if ((pl->player_pos_world[0] + dx < 1) ||
 		(pl->player_pos_world[0] + dx == 20) ||
 		(pl->player_pos_world[1] + dy == 19) ||
-		(pl->player_pos_world[1] + dy < 1))
+		(pl->player_pos_world[1] + dy < 1) ||
+		(pl->player_pos_world[0] + dx == rmt->player_pos_world[0] - 1 && pl->player_pos_world[1] + dy == rmt->player_pos_world[1]) ||
+		(pl->player_pos_world[0] + dx == rmt->player_pos_world[0] + 1 && pl->player_pos_world[1] + dy == rmt->player_pos_world[1]) ||
+		(pl->player_pos_world[0] + dx == rmt->player_pos_world[0] && pl->player_pos_world[1] + dy == rmt->player_pos_world[1]) ||
+		(pl->player_pos_world[0] + dx == rmt->player_pos_world[0] && pl->player_pos_world[1] + dy == rmt->player_pos_world[1]) ||
+		(pl->player_pos_world[0]  == rmt->player_pos_world[0] - 1 && pl->player_pos_world[1] + dy == rmt->player_pos_world[1] - 1) ||
+		(pl->player_pos_world[0] + dx  == rmt->player_pos_world[0] - 1 && pl->player_pos_world[1] + dy == rmt->player_pos_world[1] - 1) ||
+		(pl->player_pos_world[0] + dx == rmt->player_pos_world[0] && pl->player_pos_world[1] + dy == rmt->player_pos_world[1] - 1) ||
+		(pl->player_pos_world[0] + dx == rmt->player_pos_world[0] + 1 && pl->player_pos_world[1] + dy == rmt->player_pos_world[1] - 1) || 
+		(pl->player_pos_world[0] + dx == cat->player_pos_world[0] - 1 && pl->player_pos_world[1] + dy == cat->player_pos_world[1]) ||
+		(pl->player_pos_world[0] + dx == cat->player_pos_world[0] + 1 && pl->player_pos_world[1] + dy == cat->player_pos_world[1]) ||
+		(pl->player_pos_world[0] + dx == cat->player_pos_world[0] && pl->player_pos_world[1] + dy == cat->player_pos_world[1]) ||
+		(pl->player_pos_world[0] + dx == cat->player_pos_world[0] && pl->player_pos_world[1] + dy == cat->player_pos_world[1]) ||
+		(pl->player_pos_world[0]  == cat->player_pos_world[0] - 1 && pl->player_pos_world[1] + dy == cat->player_pos_world[1] - 1) ||
+		(pl->player_pos_world[0] + dx  == cat->player_pos_world[0] - 1 && pl->player_pos_world[1] + dy == cat->player_pos_world[1] - 1) ||
+		(pl->player_pos_world[0] + dx == cat->player_pos_world[0] && pl->player_pos_world[1] + dy == cat->player_pos_world[1] - 1) ||
+		(pl->player_pos_world[0] + dx == cat->player_pos_world[0] + 1 && pl->player_pos_world[1] + dy == cat->player_pos_world[1] - 1))
 		return (0);
 
 	return (tile == 0x1B || tile == 0x49 || tile == 0x4A ||	// return a tile where the player can walk
@@ -91,10 +190,10 @@ UINT8	can_player_move(INT8 dx, INT8 dy, sprites *pl) {
 			tile == 0x28);
 }
 
-void	move_player(INT8 dx, INT8 dy, sprites *pl) {
+void	move_player(INT8 dx, INT8 dy, sprites *pl, sprites *cat, sprites *rmt) {
 
 	UBYTE flag = 0;
-	if (!can_player_move(dx, dy, pl))
+	if (!can_player_move(dx, dy, pl, cat, rmt))
 		flag = 1;
 
 	// init the new position of the player by adding the value of the move_player()
@@ -142,13 +241,14 @@ void	move_player(INT8 dx, INT8 dy, sprites *pl) {
 					set_sprite_tile(1, PLAYER_ANIMATION_SIDE[pl->player_animation_frame] + 2);
 					break;
 			}
-			can_player_move(0, 0, pl);
+			can_player_move(0, 0, pl, cat, rmt);
 			// to pass at the next sprite of the tileset
 			pl->player_animation_frame = (pl->player_animation_frame + 1) % 4;
 			pl->frame_skip = 6;
 		}
 	}
 }
+
 
 void	game(sprites *pl, sprites *cat, sprites *roomate) {
 
@@ -157,23 +257,24 @@ void	game(sprites *pl, sprites *cat, sprites *roomate) {
 //	pl->player_direction = PLAYER_DIRECTION_DOWN;
 	if (joypad() & J_UP) {
 		pl->player_direction = PLAYER_DIRECTION_UP;		// init the direction according to the joypad
-			move_player(0, -1, pl);						// increment or decrement the square of the grid where is the player,
+			move_player(0, -1, pl, cat, roomate);						// increment or decrement the square of the grid where is the player,
 	}												// here, -1 square on y;
 	else if (joypad() & J_DOWN) {					// if chose if instead of else if: moving in diagonal
 		pl->player_direction = PLAYER_DIRECTION_DOWN;
-			move_player(0, +1, pl);
+			move_player(0, +1, pl, cat, roomate);
 	}
 	else if (joypad() & J_LEFT) {
 		pl->player_direction = PLAYER_DIRECTION_LEFT;
-			move_player(-1, 0, pl);
+			move_player(-1, 0, pl, cat, roomate);
 	}
 	else if (joypad() & J_RIGHT) {
 		pl->player_direction = PLAYER_DIRECTION_RIGHT;
-			move_player(+1, 0, pl);
+			move_player(+1, 0, pl, cat, roomate);
 	}
 	if (joypad() & J_A) {
 		interact(pl, cat, roomate);
 	}
+	
 }
 
 void	init_game(void) {
@@ -185,7 +286,6 @@ void	init_game(void) {
 	// init the sprites palette
 	OBP0_REG = OBP1_REG = 0xe2; // choosen colors
 	SPRITES_8x16;
-	SHOW_SPRITES;
 
-	//show_message("Hello young player.\nPress A to scroll\nthe text.\nGreat ! :)");
+	//show_message("Hello young player.\nPress A to scroll\nthe text.\n", 0 , 0);
 }

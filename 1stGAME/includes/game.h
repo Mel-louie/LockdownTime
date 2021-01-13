@@ -4,6 +4,7 @@
 /*################*/
 
 #include "../lib/gbdk2020/include/gb/gb.h"
+#include "../lib/gbdk2020/include/gb/cgb.h"
 // #include "../lib/gbdk-n/include/gb/gb.h" // to build with gbdk-n
 #include "tilemap_splashscreen.h"
 #include "tileset_splashscreen.h"
@@ -18,6 +19,8 @@
 #include "tilemap_screen_new.h"
 #include "tileset_screen_new.h"
 
+// Values must be in the range 0-31! For example, CGB_PAL(31,31,31) is white, CGB_PAL(0,0,0) is black, and CGB_PAL(0,31,0) is green.
+#define CGB_PAL(r,g,b) (((b)&31)<<10 | ((g)&31)<<5 | ((r)&31))
 
 // sprites's state
 typedef struct	sprites
