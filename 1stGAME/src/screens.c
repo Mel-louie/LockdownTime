@@ -11,6 +11,7 @@ const UWORD palette_splash[] =
 	CGB_PAL(0,20,25), CGB_PAL(0,20,25), CGB_PAL(0,10,13), CGB_PAL(10,0,10), // BGP_REG = 0xf9
 	CGB_PAL(0,10,13), CGB_PAL(0,10,13), CGB_PAL(0,10,13), CGB_PAL(10,0,10), // BGP_REG = 0xfe
 	CGB_PAL(10,0,10), CGB_PAL(10,0,10), CGB_PAL(10,0,10), CGB_PAL(10,0,10), // BGP_REG = 0xff
+	CGB_PAL(27,31,27),  CGB_PAL(19,29,15),  CGB_PAL(9,16,16),  CGB_PAL(5,7,5), //sweet green 
 };
 
 void	splash_screen(void) {
@@ -66,7 +67,7 @@ void	title_screen(void) {
 	set_bkg_data(0, TILESETSC_NEW_TILE_COUNT, TILESETSC_NEW);
 	set_bkg_tiles(0, 0, TILEMAPSC_NEW_WIDTH, TILEMAPSC_NEW_HEIGHT, TILEMAPSC_NEW);
 	BGP_REG = 0xe4; // puts back the PALETTE to its init point, very important to not have a forever with/black background
-	set_bkg_palette( 0, 1, &palette_splash[0] );
+	set_bkg_palette( 0, 1, &palette_splash[16] );
 	SHOW_BKG;
 
 	// TEXT
