@@ -6,12 +6,20 @@
 
 #include "../include/game.h"
 
-const UWORD palette_splash[] =
+/*const UWORD palette_splash[] =
 {
 	CGB_PAL(27, 31, 27), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green0			//0
 	CGB_PAL(19, 29, 15), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green1			//4
 	CGB_PAL(9, 16, 16), CGB_PAL(9, 16, 16), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green2			//8
 	CGB_PAL(5, 7, 5), CGB_PAL(5, 7, 5), CGB_PAL(5, 7, 5), CGB_PAL(5, 7, 5),			//sweet green3			//12
+};*/
+
+const UWORD palette_splash[] =
+{
+	CGB_PAL(25, 31, 23), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(4, 4, 6), //sweet green0			//0
+	CGB_PAL(19, 29, 15), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(4, 4, 6), //sweet green1			//4
+	CGB_PAL(9, 16, 16), CGB_PAL(9, 16, 16), CGB_PAL(9, 16, 16), CGB_PAL(4, 4, 6), //sweet green2			//8
+	CGB_PAL(4, 4, 6), CGB_PAL(4, 4, 6), CGB_PAL(4, 4, 6), CGB_PAL(4, 4, 6),			//sweet green3			//12
 };
 
 void	clear_title_screen(void) {

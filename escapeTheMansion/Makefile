@@ -29,7 +29,7 @@ _END		= "\033[0m"
 all:
 	@echo $(_BLUE)"Building ... "$(_YELLOW)
 	@./gbdk2020/bin/lcc -Wa-l -Wm-yc -Wl-m -Wl-j -o escapeTheMansion.gb src/*.c
-	cp escapeTheMansion.gb web/rom/game.gb
+	cp escapeTheMansion.gb escapeTheMansion/rom/game.gb
 	@echo $(_GREEN)"Done!"$(_END)
 
 clean:
