@@ -6,13 +6,9 @@
 
 #include "../include/game.h"
 
-/*const UWORD palette_splash[] =
-{
-	CGB_PAL(27, 31, 27), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green0			//0
-	CGB_PAL(19, 29, 15), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green1			//4
-	CGB_PAL(9, 16, 16), CGB_PAL(9, 16, 16), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green2			//8
-	CGB_PAL(5, 7, 5), CGB_PAL(5, 7, 5), CGB_PAL(5, 7, 5), CGB_PAL(5, 7, 5),			//sweet green3			//12
-};*/
+/* unused palettes
+CGB_PAL(27, 31, 27), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(5, 7, 5), //sweet green0			//0
+*/
 
 const UWORD palette_splash[] =
 {

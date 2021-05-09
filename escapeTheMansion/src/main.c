@@ -16,7 +16,7 @@ const UWORD palette_table[] =
 
 void	main(void) {
 
-//	set_bkg_palette(0, 1, &palette_table[0]);
+	set_bkg_palette(0, 1, &palette_table[0]);
 //	splash_screen();
 //	HIDE_BKG;
 	title_screen();
