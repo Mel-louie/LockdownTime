@@ -31,6 +31,7 @@ void	clear_title_screen(void) {
 	set_bkg_palette( 0, 1, &palette_splash[12] );
 	perform_delay(30);
 	BGP_REG = 0xe4;
+	set_bkg_palette( 0, 1, &palette_splash[0] );
 	HIDE_WIN;
 	HIDE_BKG;
 }
