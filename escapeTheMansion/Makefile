@@ -28,7 +28,15 @@ _END		= "\033[0m"
 
 all:
 	@echo $(_BLUE)"Building ... "$(_YELLOW)
-	@./gbdk2020/bin/lcc -Wa-l -Wm-yc -Wl-m -Wl-j -o escapeTheMansion.gb src/*.c
+	@./mod2gbt musics/mainTheme.mod song 2
+	@./gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o src/main.o src/main.c
+	@./gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o output.o output.c
+	@./gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o gbt_player.o gbt_player.s
+	@./gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o gbt_player_bank1.o gbt_player_bank1.s
+
+	@./gbdk2020/bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -Wl-yt1 -Wl-yo4 -Wl-ya0 -o test.gb src/main.o output.o gbt_player.o gbt_player_bank1.o
+
+
 	cp escapeTheMansion.gb escapeTheMansion/rom/game.gb
 	@echo $(_GREEN)"Done!"$(_END)
 

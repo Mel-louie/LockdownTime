@@ -10,6 +10,7 @@
 #include "../gbdk2020/include/gb/gb.h"
 #include "../gbdk2020/include/gb/cgb.h"
 #include "../gbdk2020/include/stdio.h"
+#include "../gbdk-n/include/gb/gb.h"
 
 #include "texts.h"
 #include "tileset_font.h"
