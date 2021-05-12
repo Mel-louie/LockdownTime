@@ -5,7 +5,7 @@
 #+/+/+/+/+/+/+/+/+/+/+/+/+/#*/
 
 #include "../include/game.h"
-/*
+
 const UWORD palette_table[] =
 {
 	CGB_PAL(25, 31, 23), CGB_PAL(19, 29, 15), CGB_PAL(9, 16, 16), CGB_PAL(4, 4, 6), //sweet green0			//0
@@ -33,25 +33,4 @@ void	main(void) {
 	while (1) {
 		game(&fire);
 	}
-}*/
-#include "../gbt_player.h"
-
-extern const unsigned char * song_Data[];
-
-void main()
-{
-    disable_interrupts();
-
-    gbt_play(song_Data, 2, 7);
-    gbt_loop(0);
-
-    set_interrupts(VBL_IFLAG);
-    enable_interrupts();
-
-    while (1)
-    {
-        wait_vbl_done();
-
-        gbt_update(); // This will change to ROM bank 1.
-    }
 }
