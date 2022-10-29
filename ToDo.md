@@ -1,4 +1,4 @@
-# To do
+# To do on standby (forever)]
 
 :radio_button: to do; :ballot_box_with_check: OK; :exclamation: priority; :scissors: not a thing anymore<br><br><br>
 
