@@ -1,3 +1,8 @@
+Update 10/29/2022:
+This mini-not-realy-a-game was my first steps whith GBDK and GameBoy programing. It was fun and helped my mental health a lot during 2020 lockdowns. I don't think I'll continue it, but I have a lot of affection for it :)
+
+___
+
 Work in progress of my 1st Gameboy game.
 Without pretention, just for fun and learning.
 
