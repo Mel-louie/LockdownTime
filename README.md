@@ -16,7 +16,7 @@ Without pretention, just for fun and learning.
 <b>To lauch:</b>
 
 ````
-git clone https://github.com/Mel-louie/Gameboy_GBDK-N.git
+git clone https://github.com/Mel-louie/LockdownTime.git
 cd 'to-the-directory'
 make
 ````
